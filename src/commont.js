@@ -31,3 +31,11 @@ const getRandomCoordinate = ({ longitude: centerLon, latitude: centerLat }) => {
 };
 
 export default fetchFakeData;
+
+export const convertData = (point, array) => {
+  let newString = point.toString();
+  array.forEach((element) => {
+    newString += `;${element.geometry.coordinates.toString()}`;
+  });
+  return newString;
+};
